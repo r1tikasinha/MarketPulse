@@ -53,7 +53,7 @@ const [selectedRange, setSelectedRange] = useState("1D");
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/market/${symbol}`
+        `https://marketpulse-r28a.onrender.com/api/market/${symbol}`
       );
 
       const result = await response.json();

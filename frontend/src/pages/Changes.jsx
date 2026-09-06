@@ -22,7 +22,7 @@ function Changes() {
       setError("");
 
       const response = await fetch(
-        "http://localhost:5000/api/changes"
+        "https://marketpulse-r28a.onrender.com/api/changes"
       );
 
       if (!response.ok) {

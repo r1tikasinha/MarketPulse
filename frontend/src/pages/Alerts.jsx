@@ -28,7 +28,7 @@ function Alerts() {
   const loadAlerts = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/alerts"
+        "https://marketpulse-r28a.onrender.com/api/alerts"
       );
 
       const result = await response.json();
@@ -48,7 +48,7 @@ function Alerts() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/alerts",
+        "https://marketpulse-r28a.onrender.com/api/alerts",
         {
           method: "POST",
           headers: {
@@ -83,7 +83,7 @@ function Alerts() {
   const deleteAlert = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/alerts/${id}`,
+        `https://marketpulse-r28a.onrender.com/api/alerts/${id}`,
         {
           method: "DELETE",
         }

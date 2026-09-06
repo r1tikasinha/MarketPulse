@@ -27,8 +27,8 @@ function Watchlist() {
   const loadData = async () => {
     try {
       const [watchlistResponse, marketResponse] = await Promise.all([
-        fetch("http://localhost:5000/api/watchlist"),
-        fetch("http://localhost:5000/api/market"),
+        fetch("https://marketpulse-r28a.onrender.com/api/watchlist"),
+        fetch("https://marketpulse-r28a.onrender.com/api/market"),
       ]);
 
       const watchlistResult = await watchlistResponse.json();
@@ -65,7 +65,7 @@ function Watchlist() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/watchlist",
+        "https://marketpulse-r28a.onrender.com/api/watchlist",
         {
           method: "POST",
           headers: {
@@ -104,7 +104,7 @@ function Watchlist() {
   const removeStock = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/watchlist/${id}`,
+        `https://marketpulse-r28a.onrender.com/api/watchlist/${id}`,
         {
           method: "DELETE",
         }

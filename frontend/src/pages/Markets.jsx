@@ -22,7 +22,7 @@ function Markets() {
   const loadMarkets = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/market"
+        "https://marketpulse-r28a.onrender.com/api/market"
       );
 
       const result = await response.json();

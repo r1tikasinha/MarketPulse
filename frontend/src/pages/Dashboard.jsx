@@ -72,9 +72,9 @@ function Dashboard() {
         changesResponse,
         alertsResponse,
       ] = await Promise.all([
-        fetch("http://localhost:5000/api/watchlist"),
-        fetch("http://localhost:5000/api/changes"),
-        fetch("http://localhost:5000/api/alerts"),
+        fetch("https://marketpulse-r28a.onrender.com/api/watchlist"),
+        fetch("https://marketpulse-r28a.onrender.com/api/changes"),
+        fetch("https://marketpulse-r28a.onrender.com/api/alerts"),
       ]);
 
       if (
