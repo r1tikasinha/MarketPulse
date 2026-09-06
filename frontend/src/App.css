@@ -1464,12 +1464,13 @@ body {
   gap: 8px;
   border: none;
   background: transparent;
-  color: #8e9aaa;
+  color: #242425;
   font-size: 14px;
   cursor: pointer;
   padding: 0;
   margin-bottom: 30px;
 }
+
 
 .back-button:hover {
   color: #ffffff;
@@ -1490,7 +1491,7 @@ body {
 
 .stock-symbol-large {
   margin: 0;
-  color: #7f8b9a;
+  color: #555b62;
   font-size: 14px;
 }
 
@@ -1530,8 +1531,8 @@ body {
 }
 
 .stock-stat-card {
-  border: 1px solid #202a35;
-  background: #0d131a;
+  border: 1px solid #393b3d;
+  background: #f2f4f7;
   border-radius: 14px;
   padding: 20px;
 }
@@ -1543,21 +1544,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #151e28;
+  background: #252728;
   color: #8ea0b5;
   margin-bottom: 18px;
 }
 
 .stock-stat-card span {
   display: block;
-  color: #7e8997;
+  color: #121313;
   font-size: 13px;
   margin-bottom: 8px;
 }
 
 .stock-stat-card strong {
   font-size: 19px;
-  color: #f5f7fa;
+  color: #0f1011;
 }
 
 .stock-detail-section {
@@ -1575,7 +1576,7 @@ body {
 
 .activity-card {
   border: 1px solid #202a35;
-  background: #0d131a;
+  background: #f0f2f4;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -1585,7 +1586,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 19px 22px;
-  border-bottom: 1px solid #202a35;
+  border-bottom: 1px solid #202122;
 }
 
 .activity-row:last-child {
@@ -1593,12 +1594,12 @@ body {
 }
 
 .activity-row span {
-  color: #8994a2;
+  color: #555657;
   font-size: 14px;
 }
 
 .activity-row strong {
-  color: #f5f7fa;
+  color: #1d1e1f;
   font-size: 14px;
 }
 
@@ -3876,3 +3877,17 @@ body {
 }
 
 
+.activity-card {
+    background: #eceff1;
+    border: 1px solid #1e1f21;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.activity-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 19px 22px;
+}
