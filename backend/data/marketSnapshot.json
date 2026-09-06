@@ -1,0 +1,23 @@
+{
+  "lastChecked": "2026-09-06T20:08:17.915Z",
+  "stocks": {
+    "INFY": {
+      "price": 1512.74,
+      "changePercent": 0,
+      "volume": 7078091,
+      "volatility": 2.7
+    },
+    "HDFCBANK": {
+      "price": 1983.43,
+      "changePercent": -0.04,
+      "volume": 6060954,
+      "volatility": 1.6
+    },
+    "TATAMOTORS": {
+      "price": 742.97,
+      "changePercent": 0.1,
+      "volume": 16196772,
+      "volatility": 4
+    }
+  }
+}
