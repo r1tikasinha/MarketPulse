@@ -3891,3 +3891,31 @@ body {
     justify-content: space-between;
     padding: 19px 22px;
 }
+
+.market-row:hover {
+    background: #acba94;
+}
+
+.search-box {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  background: #ffffff;
+}
+
+.search-box input {
+  position: relative;
+  z-index: 11;
+  pointer-events: auto;
+  cursor: text;
+  background: #ffffff;
+  color: #1e293b;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.market-row {
+  cursor: pointer;
+}

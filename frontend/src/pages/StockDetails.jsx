@@ -323,8 +323,8 @@ const [selectedRange, setSelectedRange] = useState("1D");
 // ============================================
 
 const rangePoints = {
-  "1D": 7,
-  "1W": 14,
+  "1D": 24,
+  "1W": 7,
   "1M": 30,
   "3M": 90,
   "6M": 180,

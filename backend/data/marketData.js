@@ -1,25 +1,112 @@
-function generatePriceHistory(startPrice, volatility) {
+// function generatePriceHistory(startPrice, volatility) {
+
+//     const history = [];
+
+//     let currentPrice = startPrice;
+
+//     for (let i = 0; i < 365; i++) {
+
+//         const movement =
+//             Math.sin(i * 0.15) *
+//             volatility *
+//             0.005;
+
+//         currentPrice =
+//             currentPrice * (1 + movement);
+
+//         history.push(
+//             Number(currentPrice.toFixed(2))
+//         );
+//     }
+
+//     // Latest historical price = current price
+//     history[history.length - 1] =
+//         Number(startPrice.toFixed(2));
+
+//     return history;
+// }
+
+
+function generatePriceHistory(startPrice, volatility, seed = 1) {
 
     const history = [];
 
     let currentPrice = startPrice;
 
+    // Each stock gets a different long-term personality
+    const patterns = {
+        1: {
+            trend: 0.00010,
+            wave: 0.018,
+            frequency: 0.045
+        },
+
+        2: {
+            trend: -0.00004,
+            wave: 0.012,
+            frequency: 0.060
+        },
+
+        3: {
+            trend: 0.00018,
+            wave: 0.022,
+            frequency: 0.050
+        },
+
+        4: {
+            trend: -0.00015,
+            wave: 0.045,
+            frequency: 0.035
+        },
+
+        5: {
+            trend: 0.00007,
+            wave: 0.015,
+            frequency: 0.055
+        }
+    };
+
+    const pattern =
+        patterns[seed] || patterns[1];
+
     for (let i = 0; i < 365; i++) {
 
-        const movement =
-            Math.sin(i * 0.15) *
+        // Long-term trend
+        const trend =
+            pattern.trend;
+
+        // Different wave for every stock
+        const wave =
+            Math.sin(
+                i * pattern.frequency + seed
+            ) *
+            pattern.wave *
             volatility *
-            0.005;
+            0.01;
+
+        // Smaller daily noise
+        const noise =
+            (Math.random() - 0.5) *
+            volatility *
+            0.004;
+
+        const movement =
+            trend +
+            wave +
+            noise;
 
         currentPrice =
-            currentPrice * (1 + movement);
+            currentPrice *
+            (1 + movement);
 
         history.push(
-            Number(currentPrice.toFixed(2))
+            Number(
+                currentPrice.toFixed(2)
+            )
         );
     }
 
-    // Latest historical price = current price
+    // Make final historical value close to current price
     history[history.length - 1] =
         Number(startPrice.toFixed(2));
 
@@ -45,9 +132,10 @@ const marketData = {
         volatility: 1.8,
 
         priceHistory: generatePriceHistory(
-            1425.50,
-            1.8
-        )
+    1425.50,
+    1.8,
+    1
+)
     },
 
 
@@ -66,9 +154,10 @@ const marketData = {
         volatility: 1.2,
 
         priceHistory: generatePriceHistory(
-            3248.20,
-            1.2
-        )
+    3248.20,
+    1.2,
+    2
+)
     },
 
 
@@ -87,9 +176,10 @@ const marketData = {
         volatility: 2.4,
 
         priceHistory: generatePriceHistory(
-            1512.75,
-            2.4
-        )
+    1512.75,
+    2.4,
+    3
+)
     },
 
 
@@ -106,11 +196,11 @@ const marketData = {
         averageVolume: 6400000,
 
         volatility: 4.8,
-
-        priceHistory: generatePriceHistory(
-            742.20,
-            4.8
-        )
+priceHistory: generatePriceHistory(
+    742.20,
+    4.8,
+    4
+)
     },
 
 
@@ -129,9 +219,10 @@ const marketData = {
         volatility: 1.5,
 
         priceHistory: generatePriceHistory(
-            1984.30,
-            1.5
-        )
+    1984.30,
+    1.5,
+    5
+)
     }
 
 };
@@ -214,15 +305,23 @@ function updateMarketData() {
 
          // DO NOT MODIFY HISTORICAL DATA
  
-        if (!Array.isArray(stock.priceHistory)) {
+        // Keep price history connected to the latest market price
+if (!Array.isArray(stock.priceHistory)) {
+    stock.priceHistory =
+        generatePriceHistory(
+            stock.price,
+            stock.volatility,
+            stock.seed || 1
+        );
+}
 
-            stock.priceHistory =
-                generatePriceHistory(
-                    stock.price,
-                    stock.volatility
-                );
+// Add latest price to the chart history
+stock.priceHistory.push(stock.price);
 
-        }
+// Keep maximum 365 points
+if (stock.priceHistory.length > 365) {
+    stock.priceHistory.shift();
+}
 
 
          // SIMULATE TRADING VOLUME
