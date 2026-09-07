@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1788548805782,
+    "symbol": "INFY",
+    "type": "price",
+    "condition": "above",
+    "value": 1000,
+    "status": "triggered",
+    "createdAt": "2026-09-04T19:06:45.782Z",
+    "triggeredAt": "2026-09-04T19:06:53.112Z"
+  },
+  {
+    "id": 1788548855932,
+    "symbol": "INFY",
+    "type": "price",
+    "condition": "above",
+    "value": 1000000,
+    "status": "triggered",
+    "createdAt": "2026-09-04T19:07:35.932Z",
+    "triggeredAt": "2026-09-05T14:07:42.273Z"
+  },
+  {
+    "id": 1788551123406,
+    "symbol": "TATAMOTORS",
+    "type": "volume",
+    "condition": "above",
+    "value": 1.5,
+    "status": "triggered",
+    "createdAt": "2026-09-04T19:45:23.406Z",
+    "triggeredAt": "2026-09-04T19:45:29.928Z"
+  },
+  {
+    "id": 1788551137064,
+    "symbol": "TATAMOTORS",
+    "type": "volume",
+    "condition": "above",
+    "value": 1.5,
+    "status": "triggered",
+    "createdAt": "2026-09-04T19:45:37.064Z",
+    "triggeredAt": "2026-09-04T19:45:40.755Z"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 3,
+    "symbol": "INFY",
+    "name": "Infosys",
+    "exchange": "NSE"
+  },
+  {
+    "id": 1788624953977,
+    "symbol": "HDFCBANK",
+    "name": "HDFC Bank",
+    "exchange": "NSE"
+  },
+  {
+    "id": 1788717060437,
+    "symbol": "TATAMOTORS",
+    "name": "Tata Motors",
+    "exchange": "NSE"
+  }
+]
